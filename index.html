@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CyberSec Pro | Ethical Hacking Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .terminal {
+        background-color: #0a0a0a;
+        color: #0af20a;
+        font-family: "Courier New", monospace;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(10, 242, 10, 0.3);
+      }
+      .typing-effect {
+        border-right: 2px solid #0af20a;
+        animation: blink 0.7s infinite;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #0af20a;
+        }
+      }
+      .glow-text {
+        text-shadow: 0 0 8px rgba(10, 242, 10, 0.7);
+      }
+      .matrix-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.1;
+        overflow: hidden;
+      }
+      .hacker-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(10, 242, 10, 0.3);
+      }
+
+      .right-timeline {
+        direction: rtl;
+      }
+      .left-timeline {
+        direction: ltr;
+      }
+      @media (min-width: 768px) {
+        .right-timeline,
+        .left-timeline {
+          direction: ltr;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-black text-gray-100 overflow-x-hidden">
+    <!-- Matrix background animation -->
+    <div id="matrix" class="matrix-bg"></div>
+
+    <!-- Navigation -->
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <i class="fas fa-terminal text-green-500 text-2xl"></i>
+        <span class="text-xl font-bold glow-text"
+          >CyberSec<span class="text-green-500">Pro</span></span
+        >
+      </div>
+      <div class="hidden md:flex space-x-8">
+        <a href="#services" class="hover:text-green-500 transition">Services</a>
+        <a href="#about" class="hover:text-green-500 transition">About</a>
+        <a href="#tools" class="hover:text-green-500 transition">Tools</a>
+        <a href="#contact" class="hover:text-green-500 transition">Contact</a>
+      </div>
+      <button class="md:hidden text-green-500">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="container mx-auto px-6 py-20 md:py-32 flex flex-col md:flex-row items-center"
+    >
+      <div class="md:w-1/2 mb-12 md:mb-0">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          <span class="glow-text">Ethical</span>
+          <span class="text-green-500">Hacking</span><br />
+          <span class="typing-effect inline-block" id="typing"></span>
+        </h1>
+        <p class="text-gray-400 mb-8 text-lg">
+          We protect your digital assets with advanced penetration testing and
+          security solutions. White hat hackers at your service.
+        </p>
+        <div class="flex space-x-4">
+          <button
+            class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md font-medium transition transform hover:scale-105"
+          >
+            Get Security Audit
+          </button>
+          <button
+            class="border border-green-500 text-green-500 hover:bg-green-900 hover:bg-opacity-30 px-6 py-3 rounded-md font-medium transition transform hover:scale-105"
+          >
+            Learn More
+          </button>
+        </div>
+      </div>
+      <div class="md:w-1/2 relative">
+        <div class="terminal p-6 rounded-lg max-w-md mx-auto">
+          <div class="flex space-x-2 mb-4">
+            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+          </div>
+          <pre class="overflow-x-auto" id="terminal-code">
+<span class="text-green-500">root@cybersec-pro:~#</span> nmap -sS 192.168.1.1
+
+Starting Nmap 7.92 ( https://nmap.org )
+Nmap scan report for router.local (192.168.1.1)
+Host is up (0.045s latency).
+Not shown: 995 closed tcp ports (reset)
+PORT    STATE SERVICE
+22/tcp  open  ssh
+53/tcp  open  domain
+80/tcp  open  http
+443/tcp open  https
+<span class="text-yellow-500">VULNERABILITIES DETECTED:</span>
+- CVE-2023-1234: HTTP Server Buffer Overflow
+- CVE-2023-5678: Weak SSH Encryption
+
+<span class="text-green-500">root@cybersec-pro:~#</span> <span class="typing-effect" id="terminal-cursor">_</span>
+                </pre>
+        </div>
+        <div
+          class="absolute -bottom-10 -right-10 w-32 h-32 border-4 border-green-500 rounded-full opacity-30"
+        ></div>
+        <div
+          class="absolute -top-10 -left-10 w-24 h-24 border-4 border-green-500 rounded-full opacity-20"
+        ></div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-900 bg-opacity-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center glow-text">
+          Our <span class="text-green-500">Services</span>
+        </h2>
+        <p class="text-gray-400 max-w-2xl mx-auto text-center mb-12">
+          Comprehensive security solutions tailored to your needs
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div
+            class="hacker-card bg-gray-800 rounded-lg p-8 transition duration-300 hover:border-green-500 border border-gray-700"
+          >
+            <div class="text-green-500 text-4xl mb-4">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Penetration Testing</h3>
+            <p class="text-gray-400 mb-4">
+              Simulate real-world attacks to identify vulnerabilities before
+              hackers do.
+            </p>
+            <button
+              class="text-green-500 hover:text-green-400 flex items-center"
+            >
+              Learn more <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="hacker-card bg-gray-800 rounded-lg p-8 transition duration-300 hover:border-green-500 border border-gray-700"
+          >
+            <div class="text-green-500 text-4xl mb-4">
+              <i class="fas fa-lock"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Vulnerability Assessment</h3>
+            <p class="text-gray-400 mb-4">
+              Comprehensive scanning of your systems for known security
+              weaknesses.
+            </p>
+            <button
+              class="text-green-500 hover:text-green-400 flex items-center"
+            >
+              Learn more <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="hacker-card bg-gray-800 rounded-lg p-8 transition duration-300 hover:border-green-500 border border-gray-700"
+          >
+            <div class="text-green-500 text-4xl mb-4">
+              <i class="fas fa-user-secret"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Security Training</h3>
+            <p class="text-gray-400 mb-4">
+              Train your team to recognize and prevent security threats.
+            </p>
+            <button
+              class="text-green-500 hover:text-green-400 flex items-center"
+            >
+              Learn more <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+      <div
+        class="container mx-auto px-6 flex flex-col md:flex-row items-center"
+      >
+        <div class="md:w-1/2 mb-12 md:mb-0">
+          <div class="terminal p-6 rounded-lg max-w-md mx-auto">
+            <div class="flex space-x-2 mb-4">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <pre class="overflow-x-auto">
+<span class="text-green-500">root@cybersec-pro:~#</span> whoami
+
+<span class="text-yellow-500">CyberSec Pro Team</span>
+- Certified Ethical Hackers
+- Security Researchers
+- Former Black Hats (reformed)
+- 10+ Years Combined Experience
+- 500+ Systems Secured
+- 0 Data Breaches
+
+<span class="text-green-500">root@cybersec-pro:~#</span> <span class="blink">_</span>
+                    </pre>
+          </div>
+        </div>
+        <div class="md:w-1/2 md:pl-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 glow-text">
+            About <span class="text-green-500">Us</span>
+          </h2>
+          <p class="text-gray-400 mb-6">
+            We are a team of certified ethical hackers dedicated to securing
+            your digital infrastructure. Our experts come from diverse
+            backgrounds in cybersecurity, including former black hat hackers who
+            now use their skills for good.
+          </p>
+          <p class="text-gray-400 mb-6">
+            We believe in proactive security - finding vulnerabilities before
+            malicious actors can exploit them. Our approach combines automated
+            tools with manual testing to provide comprehensive coverage.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-2"></i>
+              <span>Certified Ethical Hackers</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-2"></i>
+              <span>24/7 Monitoring</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-2"></i>
+              <span>100% Confidential</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center glow-text">
+          Our <span class="text-green-500">Hacking Methodology</span>
+        </h2>
+
+        <div class="relative">
+          <!-- Timeline line -->
+          <div
+            class="hidden md:block absolute left-1/2 h-full w-1 bg-green-500 transform -translate-x-1/2"
+          ></div>
+
+          <!-- Steps -->
+          <div class="space-y-12 md:space-y-0">
+            <!-- Step 1 -->
+            <div
+              class="md:flex justify-between items-center w-full right-timeline"
+            >
+              <div class="md:w-5/12 md:pr-8 order-1">
+                <div
+                  class="bg-gray-800 p-6 rounded-lg border border-green-500 border-opacity-30 hover:border-opacity-100 transition"
+                >
+                  <h3 class="text-xl font-bold mb-2 text-green-500">
+                    1. Reconnaissance
+                  </h3>
+                  <p class="text-gray-400">
+                    Gathering intelligence about the target system through
+                    passive and active information collection.
+                  </p>
+                </div>
+              </div>
+              <div class="md:w-2/12 flex justify-center order-1">
+                <div
+                  class="flex items-center justify-center w-12 h-12 rounded-full bg-green-500 text-black font-bold text-xl"
+                >
+                  1
+                </div>
+              </div>
+              <div class="md:w-5/12 order-1 md:order-2"></div>
+            </div>
+
+            <!-- Step 2 -->
+            <div
+              class="md:flex justify-between items-center w-full left-timeline"
+            >
+              <div class="md:w-5/12 order-1 md:order-2"></div>
+              <div class="md:w-2/12 flex justify-center order-1">
+                <div
+                  class="flex items-center justify-center w-12 h-12 rounded-full bg-green-500 text-black font-bold text-xl"
+                >
+                  2
+                </div>
+              </div>
+              <div class="md:w-5/12 md:pl-8 order-1">
+                <div
+                  class="bg-gray-800 p-6 rounded-lg border border-green-500 border-opacity-30 hover:border-opacity-100 transition"
+                >
+                  <h3 class="text-xl font-bold mb-2 text-green-500">
+                    2. Scanning
+                  </h3>
+                  <p class="text-gray-400">
+                    Identifying open ports, services, and vulnerabilities using
+                    automated tools and manual techniques.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div
+              class="md:flex justify-between items-center w-full right-timeline"
+            >
+              <div class="md:w-5/12 md:pr-8 order-1">
+                <div
+                  class="bg-gray-800 p-6 rounded-lg border border-green-500 border-opacity-30 hover:border-opacity-100 transition"
+                >
+                  <h3 class="text-xl font-bold mb-2 text-green-500">
+                    3. Gaining Access
+                  </h3>
+                  <p class="text-gray-400">
+                    Exploiting vulnerabilities to gain initial access while
+                    maintaining careful documentation.
+                  </p>
+                </div>
+              </div>
+              <div class="md:w-2/12 flex justify-center order-1">
+                <div
+                  class="flex items-center justify-center w-12 h-12 rounded-full bg-green-500 text-black font-bold text-xl"
+                >
+                  3
+                </div>
+              </div>
+              <div class="md:w-5/12 order-1 md:order-2"></div>
+            </div>
+
+            <!-- Step 4 -->
+            <div
+              class="md:flex justify-between items-center w-full left-timeline"
+            >
+              <div class="md:w-5/12 order-1 md:order-2"></div>
+              <div class="md:w-2/12 flex justify-center order-1">
+                <div
+                  class="flex items-center justify-center w-12 h-12 rounded-full bg-green-500 text-black font-bold text-xl"
+                >
+                  4
+                </div>
+              </div>
+              <div class="md:w-5/12 md:pl-8 order-1">
+                <div
+                  class="bg-gray-800 p-6 rounded-lg border border-green-500 border-opacity-30 hover:border-opacity-100 transition"
+                >
+                  <h3 class="text-xl font-bold mb-2 text-green-500">
+                    4. Maintaining Access
+                  </h3>
+                  <p class="text-gray-400">
+                    Establishing persistent access to demonstrate real-world
+                    attack scenarios.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div
+              class="md:flex justify-between items-center w-full right-timeline"
+            >
+              <div class="md:w-5/12 md:pr-8 order-1">
+                <div
+                  class="bg-gray-800 p-6 rounded-lg border border-green-500 border-opacity-30 hover:border-opacity-100 transition"
+                >
+                  <h3 class="text-xl font-bold mb-2 text-green-500">
+                    5. Covering Tracks
+                  </h3>
+                  <p class="text-gray-400">
+                    Demonstrating how attackers hide their activities (for
+                    educational purposes only).
+                  </p>
+                </div>
+              </div>
+              <div class="md:w-2/12 flex justify-center order-1">
+                <div
+                  class="flex items-center justify-center w-12 h-12 rounded-full bg-green-500 text-black font-bold text-xl"
+                >
+                  5
+                </div>
+              </div>
+              <div class="md:w-5/12 order-1 md:order-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Tools Section -->
+    <section id="tools" class="py-20 bg-gray-900 bg-opacity-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center glow-text">
+          Our <span class="text-green-500">Tools</span>
+        </h2>
+        <p class="text-gray-400 max-w-2xl mx-auto text-center mb-12">
+          Industry-standard tools combined with custom scripts for maximum
+          effectiveness
+        </p>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div
+            class="bg-gray-800 rounded-lg p-6 flex flex-col items-center hover:bg-gray-700 transition"
+          >
+            <i class="fas fa-network-wired text-green-500 text-4xl mb-3"></i>
+            <h3 class="font-bold">Nmap</h3>
+          </div>
+          <div
+            class="bg-gray-800 rounded-lg p-6 flex flex-col items-center hover:bg-gray-700 transition"
+          >
+            <i class="fas fa-bug text-green-500 text-4xl mb-3"></i>
+            <h3 class="font-bold">Metasploit</h3>
+          </div>
+          <div
+            class="bg-gray-800 rounded-lg p-6 flex flex-col items-center hover:bg-gray-700 transition"
+          >
+            <i class="fas fa-code text-green-500 text-4xl mb-3"></i>
+            <h3 class="font-bold">Burp Suite</h3>
+          </div>
+          <div
+            class="bg-gray-800 rounded-lg p-6 flex flex-col items-center hover:bg-gray-700 transition"
+          >
+            <i class="fas fa-key text-green-500 text-4xl mb-3"></i>
+            <h3 class="font-bold">John the Ripper</h3>
+          </div>
+          <div
+            class="bg-gray-800 rounded-lg p-6 flex flex-col items-center hover:bg-gray-700 transition"
+          >
+            <i class="fas fa-shield-virus text-green-500 text-4xl mb-3"></i>
+            <h3 class="font-bold">Wireshark</h3>
+          </div>
+          <div
+            class="bg-gray-800 rounded-lg p-6 flex flex-col items-center hover:bg-gray-700 transition"
+          >
+            <i class="fas fa-user-secret text-green-500 text-4xl mb-3"></i>
+            <h3 class="font-bold">Aircrack-ng</h3>
+          </div>
+          <div
+            class="bg-gray-800 rounded-lg p-6 flex flex-col items-center hover:bg-gray-700 transition"
+          >
+            <i class="fas fa-lock text-green-500 text-4xl mb-3"></i>
+            <h3 class="font-bold">SQLmap</h3>
+          </div>
+          <div
+            class="bg-gray-800 rounded-lg p-6 flex flex-col items-center hover:bg-gray-700 transition"
+          >
+            <i class="fas fa-terminal text-green-500 text-4xl mb-3"></i>
+            <h3 class="font-bold">Custom Tools</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 bg-gray-900 bg-opacity-70">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center glow-text">
+          Live <span class="text-red-500">Threat</span> Monitoring
+        </h2>
+        <p class="text-gray-400 max-w-2xl mx-auto text-center mb-12">
+          Real-time visualization of global cyber threats we're currently
+          tracking
+        </p>
+
+        <div class="terminal p-6 rounded-lg mb-8">
+          <div class="flex space-x-2 mb-4">
+            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+          </div>
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-4"
+            id="threat-dashboard"
+          >
+            <!-- Data will be populated by JavaScript -->
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button
+            id="refresh-threats"
+            class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md font-medium transition flex items-center mx-auto"
+          >
+            <i class="fas fa-sync-alt mr-2"></i> Refresh Threat Data
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials -->
+    <section class="py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center glow-text">
+          Client <span class="text-green-500">Testimonials</span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-gray-800 rounded-lg p-8 border-l-4 border-green-500">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center text-green-500 font-bold mr-4"
+              >
+                JD
+              </div>
+              <div>
+                <h4 class="font-bold">John Doe</h4>
+                <p class="text-gray-400 text-sm">CTO, TechCorp</p>
+              </div>
+            </div>
+            <p class="text-gray-300">
+              "CyberSec Pro identified critical vulnerabilities in our
+              infrastructure that our own team had missed. Their report was
+              detailed and actionable."
+            </p>
+            <div class="flex mt-4 text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+
+          <div class="bg-gray-800 rounded-lg p-8 border-l-4 border-green-500">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center text-green-500 font-bold mr-4"
+              >
+                AS
+              </div>
+              <div>
+                <h4 class="font-bold">Alice Smith</h4>
+                <p class="text-gray-400 text-sm">
+                  Security Director, FinSecure
+                </p>
+              </div>
+            </div>
+            <p class="text-gray-300">
+              "The security training provided to our developers has
+              significantly reduced vulnerabilities in our codebase. Highly
+              recommended!"
+            </p>
+            <div class="flex mt-4 text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+
+          <div class="bg-gray-800 rounded-lg p-8 border-l-4 border-green-500">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center text-green-500 font-bold mr-4"
+              >
+                RJ
+              </div>
+              <div>
+                <h4 class="font-bold">Robert Johnson</h4>
+                <p class="text-gray-400 text-sm">CEO, StartupX</p>
+              </div>
+            </div>
+            <p class="text-gray-300">
+              "Their penetration test saved us from what could have been a
+              devastating data breach. Worth every penny."
+            </p>
+            <div class="flex mt-4 text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 bg-opacity-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center glow-text">
+            Get In <span class="text-green-500">Touch</span>
+          </h2>
+          <p class="text-gray-400 max-w-2xl mx-auto text-center mb-12">
+            Contact us for a free initial security consultation
+          </p>
+
+          <div class="bg-gray-800 rounded-lg overflow-hidden">
+            <div class="md:flex">
+              <div class="md:w-1/2 p-8 bg-gray-700">
+                <h3 class="text-xl font-bold mb-6 text-green-500">
+                  Contact Information
+                </h3>
+                <div class="space-y-4">
+                  <div class="flex items-start">
+                    <i class="fas fa-envelope text-green-500 mt-1 mr-4"></i>
+                    <div>
+                      <h4 class="font-bold">Email</h4>
+                      <p class="text-gray-400">contact@cybersec-pro.com</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <i class="fas fa-phone-alt text-green-500 mt-1 mr-4"></i>
+                    <div>
+                      <h4 class="font-bold">Phone</h4>
+                      <p class="text-gray-400">+1 (555) 123-4567</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <i
+                      class="fas fa-map-marker-alt text-green-500 mt-1 mr-4"
+                    ></i>
+                    <div>
+                      <h4 class="font-bold">Location</h4>
+                      <p class="text-gray-400">Global Remote Team</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-8">
+                  <h3 class="text-xl font-bold mb-4 text-green-500">
+                    Follow Us
+                  </h3>
+                  <div class="flex space-x-4">
+                    <a
+                      href="#"
+                      class="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center hover:bg-green-500 transition"
+                    >
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center hover:bg-green-500 transition"
+                    >
+                      <i class="fab fa-github"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center hover:bg-green-500 transition"
+                    >
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="md:w-1/2 p-8">
+                <form id="contactForm">
+                  <div class="mb-4">
+                    <label for="name" class="block text-gray-300 mb-2"
+                      >Name</label
+                    >
+                    <input
+                      type="text"
+                      id="name"
+                      class="w-full bg-gray-700 border border-gray-600 rounded-md px-4 py-2 focus:outline-none focus:border-green-500"
+                    />
+                  </div>
+                  <div class="mb-4">
+                    <label for="email" class="block text-gray-300 mb-2"
+                      >Email</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      class="w-full bg-gray-700 border border-gray-600 rounded-md px-4 py-2 focus:outline-none focus:border-green-500"
+                    />
+                  </div>
+                  <div class="mb-4">
+                    <label for="service" class="block text-gray-300 mb-2"
+                      >Service Interested In</label
+                    >
+                    <select
+                      id="service"
+                      class="w-full bg-gray-700 border border-gray-600 rounded-md px-4 py-2 focus:outline-none focus:border-green-500"
+                    >
+                      <option value="">Select a service</option>
+                      <option value="pentest">Penetration Testing</option>
+                      <option value="vuln">Vulnerability Assessment</option>
+                      <option value="training">Security Training</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div class="mb-4">
+                    <label for="message" class="block text-gray-300 mb-2"
+                      >Message</label
+                    >
+                    <textarea
+                      id="message"
+                      rows="4"
+                      class="w-full bg-gray-700 border border-gray-600 rounded-md px-4 py-2 focus:outline-none focus:border-green-500"
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-md font-medium transition"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center space-x-2 mb-6 md:mb-0">
+            <i class="fas fa-terminal text-green-500 text-2xl"></i>
+            <span class="text-xl font-bold glow-text"
+              >CyberSec<span class="text-green-500">Pro</span></span
+            >
+          </div>
+          <div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+            <a href="#" class="hover:text-green-500 transition"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-green-500 transition"
+              >Terms of Service</a
+            >
+            <a href="#" class="hover:text-green-500 transition">Careers</a>
+            <a href="#" class="hover:text-green-500 transition">Blog</a>
+          </div>
+          <div class="text-gray-500 text-sm">
+            &copy; 2023 CyberSec Pro. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Typing effect for hero section
+      const typingTexts = ["Solutions", "Protection", "Security", "Pentesting"];
+      let currentTextIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      const typingElement = document.getElementById("typing");
+      const terminalCursor = document.getElementById("terminal-cursor");
+
+      function type() {
+        const currentText = typingTexts[currentTextIndex];
+
+        if (isDeleting) {
+          typingElement.textContent = currentText.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          typingElement.textContent = currentText.substring(0, charIndex + 1);
+          charIndex++;
+        }
+
+        if (!isDeleting && charIndex === currentText.length) {
+          isDeleting = true;
+          setTimeout(type, 1500);
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          currentTextIndex = (currentTextIndex + 1) % typingTexts.length;
+          setTimeout(type, 500);
+        } else {
+          setTimeout(type, isDeleting ? 50 : 150);
+        }
+      }
+
+      // Start typing effect
+      setTimeout(type, 1000);
+
+      // Terminal cursor blink effect
+      setInterval(() => {
+        terminalCursor.style.opacity =
+          terminalCursor.style.opacity === "0" ? "1" : "0";
+      }, 700);
+
+      // Matrix background effect
+      const matrix = document.getElementById("matrix");
+      const chars = "01";
+      const fontSize = 14;
+      const columns = Math.floor(window.innerWidth / fontSize);
+      const rows = Math.floor(window.innerHeight / fontSize);
+
+      for (let i = 0; i < columns; i++) {
+        const column = document.createElement("div");
+        column.className = "matrix-column absolute top-0";
+        column.style.left = `${i * fontSize}px`;
+        column.style.width = `${fontSize}px`;
+        column.dataset.column = i;
+
+        let delay = Math.random() * 5000;
+        setTimeout(() => {
+          animateColumn(column);
+        }, delay);
+
+        matrix.appendChild(column);
+      }
+
+      function animateColumn(column) {
+        let content = "";
+        const length = Math.floor(Math.random() * rows) + 5;
+        const startPos = -length * fontSize;
+
+        column.style.top = `${startPos}px`;
+
+        // Create the characters
+        for (let i = 0; i < length; i++) {
+          const char = chars[Math.floor(Math.random() * chars.length)];
+          const span = document.createElement("span");
+          span.textContent = char;
+          span.style.color = i === length - 1 ? "#fff" : "#0af20a";
+          span.style.opacity = (i + 1) / length;
+          column.appendChild(span);
+        }
+
+        // Animate the column
+        let pos = startPos;
+        const fallSpeed = 50 + Math.random() * 50;
+        const interval = setInterval(() => {
+          pos += 2;
+          column.style.top = `${pos}px`;
+
+          if (pos > window.innerHeight) {
+            clearInterval(interval);
+            column.innerHTML = "";
+            setTimeout(() => {
+              animateColumn(column);
+            }, Math.random() * 5000);
+          }
+        }, fallSpeed);
+      }
+      // Threat monitoring dashboard functionality
+      const threatData = [
+        {
+          type: "DDoS",
+          count: "1,243",
+          level: "high",
+          icon: "fa-network-wired",
+        },
+        {
+          type: "Phishing",
+          count: "3,891",
+          level: "critical",
+          icon: "fa-fish",
+        },
+        { type: "Ransomware", count: "587", level: "high", icon: "fa-lock" },
+        { type: "SQLi", count: "2,456", level: "medium", icon: "fa-database" },
+        { type: "XSS", count: "4,129", level: "medium", icon: "fa-code" },
+        { type: "Zero-Day", count: "38", level: "critical", icon: "fa-bug" },
+      ];
+
+      function updateThreatDashboard() {
+        const dashboard = document.getElementById("threat-dashboard");
+        dashboard.innerHTML = "";
+
+        // Shuffle and get random counts to simulate live data
+        const shuffled = [...threatData].sort(() => 0.5 - Math.random());
+
+        shuffled.forEach((threat) => {
+          const randomFactor = Math.floor(Math.random() * 500) - 250;
+          const newCount = Math.max(
+            100,
+            parseInt(threat.count.replace(/,/g, "")) + randomFactor
+          );
+          const formattedCount = newCount.toLocaleString();
+
+          const threatLevelColor =
+            threat.level === "critical"
+              ? "text-red-500"
+              : threat.level === "high"
+              ? "text-orange-500"
+              : "text-yellow-500";
+
+          const card = document.createElement("div");
+          card.className = `bg-gray-800 p-4 rounded-lg border-l-4 ${threatLevelColor.replace(
+            "text",
+            "border"
+          )}`;
+          card.innerHTML = `
+                <div class="flex items-center mb-2">
+                    <i class="fas ${
+                      threat.icon
+                    } ${threatLevelColor} text-xl mr-3"></i>
+                    <h3 class="font-bold">${threat.type}</h3>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-400 text-sm">Attacks detected:</span>
+                    <span class="${threatLevelColor} font-mono">${formattedCount}</span>
+                </div>
+                <div class="mt-2">
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="${threatLevelColor.replace(
+                          "text",
+                          "bg"
+                        )} h-2 rounded-full" 
+                             style="width: ${Math.min(
+                               100,
+                               (newCount / 5000) * 100
+                             )}%"></div>
+                    </div>
+                </div>
+            `;
+          dashboard.appendChild(card);
+        });
+      }
+
+      document
+        .getElementById("refresh-threats")
+        .addEventListener("click", updateThreatDashboard);
+      updateThreatDashboard(); // Initial load
+
+      // Form submission
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Message sent! We will contact you soon.");
+          this.reset();
+        });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
